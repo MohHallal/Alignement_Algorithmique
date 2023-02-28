@@ -19,7 +19,8 @@ def seperating_sequences(file):
 if __name__=="__main__":
     input_file = "opsines"
     sequences = seperating_sequences(input_file)
-    scores = alignement.needlman(sequences)
+    alignement.needlman_alignement(sequences["seq1"],sequences["seq2"])
+    scores = alignement.needlman_score(sequences)
     sequences_names = list(sequences.keys())
     tree = upgma.arbre(scores,sequences_names)
     print(tree)
